@@ -9,7 +9,7 @@ const routes = require('./app/routes');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = process.env.SERVER_PORT;
+const port = process.env.PORT;
 
 app.use('/v1', routes);
 app.listen(port);
