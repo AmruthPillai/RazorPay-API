@@ -22,7 +22,7 @@ exports.fetch = function (req, res) {
 }
 
 exports.create = function (req, res) {
-  razorpay.invoices.create(req.query).then(data => {
+  razorpay.invoices.create(req.body).then(data => {
     res.json(data)
   }).catch(err => {
     res.status(err.statusCode).json(err.error)
@@ -30,7 +30,7 @@ exports.create = function (req, res) {
 }
 
 exports.edit = function (req, res) {
-  razorpay.invoices.edit(req.query).then(data => {
+  razorpay.invoices.edit(req.body).then(data => {
     res.json(data)
   }).catch(err => {
     res.status(err.statusCode).json(err.error)
