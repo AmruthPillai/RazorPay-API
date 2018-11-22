@@ -17,6 +17,14 @@ RAZORPAY_KEY_SECRET=
 ```
 You can find/generate these variables when you sign up to RazorPay here: https://dashboard.razorpay.com/
 
+APIs Available
+--------------
+* Invoices
+
+* Customers
+
+* Items
+
 TODO
 ----
 * Payments
