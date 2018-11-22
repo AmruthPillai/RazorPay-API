@@ -1,0 +1,7 @@
+{
+    "name": "RazorPay API",
+    "description": "This project is a NodeJS + Express Wrapper for the RazorPay API.",
+    "repository": "https://github.com/AmruthPillai/RazorPay-API",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/8/89/Razorpay_logo.svg",
+    "keywords": ["node", "express", "razorpay", "api"]
+  }

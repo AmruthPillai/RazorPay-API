@@ -2,6 +2,8 @@ RazorPay API
 ============
 This project is a NodeJS + Express Wrapper for the RazorPay API.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 The routes are similar to the original API documentation that can be found here: https://docs.razorpay.com/  
 
 For those who are familiar with ExpressJS's routing mechanism, you can check out the `/app/routes.js` file for the route directory.
