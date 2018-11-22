@@ -6,6 +6,37 @@ The routes are similar to the original API documentation that can be found here:
 
 For those who are familiar with ExpressJS's routing mechanism, you can check out the `/app/routes.js` file for the route directory.
 
+Usage 
+-----
+The API is built in a plug-and-play fashion, where all you need to get it started is create the `.env` file at the root folder with the following variables set.
+```
+RAZORPAY_KEY_ID=
+RAZORPAY_KEY_SECRET=
+```
+You can find/generate these variables when you sign up to RazorPay here: https://dashboard.razorpay.com/
+
+TODO
+----
+* Payments
+
+* Refunds
+
+* Orders
+
+* Transfers
+
+* Virtual Accounts
+
+* Plans
+
+* Subscriptions
+
+* Addons
+
+* Webhooks
+
+* Partner Auth
+
 Issues
 ------
 Feel free to submit issues and enhancement requests.
