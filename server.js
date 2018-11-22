@@ -11,7 +11,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-const port = process.env.PORT
+const port = process.env.PORT || 8080
 
 app.use('/v1', routes)
 app.listen(port)
