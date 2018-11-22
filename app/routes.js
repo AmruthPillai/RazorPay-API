@@ -20,4 +20,12 @@ router.get('/customers/:id', customers.fetch)
 router.post('/customers', customers.create)
 router.patch('/customers/:id', customers.edit)
 
+// Items API
+const items = require('./controllers/items')
+router.get('/items', items.get)
+router.get('/items/:id', items.fetch)
+router.post('/items', items.create)
+router.patch('/items/:id', items.edit)
+router.delete('/items/:id', items.delete)
+
 module.exports = router
