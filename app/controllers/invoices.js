@@ -1,70 +1,93 @@
-const Razorpay = require('razorpay')
+const request = require('request')
 
-var razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET
-})
+const baseURL = 'https://' + process.env.RAZORPAY_KEY_ID + ':' + process.env.RAZORPAY_KEY_SECRET + '@api.razorpay.com/v1/'
 
 exports.get = function (req, res) {
-  razorpay.invoices.all(req.query).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.get(baseURL + 'invoices', {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.fetch = function (req, res) {
-  razorpay.invoices.fetch(req.params.id).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.get(baseURL + 'invoices/' + req.params.id, {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.create = function (req, res) {
-  razorpay.invoices.create(req.body).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.post(baseURL + 'invoices', {
+    json: true,
+    form: req.body
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.edit = function (req, res) {
-  razorpay.invoices.edit(req.body).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.patch(baseURL + 'invoices/' + req.params.id, {
+    json: true,
+    form: req.body
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.issue = function (req, res) {
-  razorpay.invoices.issue(req.params.id).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.post(baseURL + 'invoices/' + req.params.id + '/issue', {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.delete = function (req, res) {
-  razorpay.invoices.delete(req.params.id).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.delete(baseURL + 'invoices/' + req.params.id, {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.cancel = function (req, res) {
-  razorpay.invoices.cancel(req.params.id).then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.post(baseURL + 'invoices/' + req.params.id + '/cancel', {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
 
 exports.notify = function (req, res) {
-  razorpay.invoices.notifyBy(req.params.id, 'email').then(data => {
-    res.json(data)
-  }).catch(err => {
-    res.status(err.statusCode).json(err.error)
+  request.post(baseURL + 'invoices/' + req.params.id + '/notify_by/' + req.params.medium, {
+    json: true
+  }, (err, response, body) => {
+    if (err) {
+      return console.log(err)
+    }
+    res.json(body)
   })
 }
