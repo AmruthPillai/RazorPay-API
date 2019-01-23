@@ -2,7 +2,7 @@
 FROM node:alpine
 
 # Copy local files to remote image
-COPY ./ ./
+COPY . .
 
 # Install some dependencies
 RUN npm install --only=prod
