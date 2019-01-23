@@ -1,6 +1,9 @@
 # Specify a base image
 FROM node:alpine
 
+# Set up a working directory
+WORKDIR /usr/app
+
 # Copy local files to remote image
 COPY . .
 
