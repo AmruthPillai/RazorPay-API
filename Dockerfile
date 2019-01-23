@@ -4,11 +4,12 @@ FROM node:alpine
 # Set up a working directory
 WORKDIR /usr/app
 
-# Copy local files to remote image
-COPY . .
-
-# Install some dependencies
+# Install the dependencies
+COPY ./package.json ./
 RUN npm install --only=prod
+
+# Copy local files to remote image
+COPY ./ ./
 
 # Run a startup command
 CMD ["npm", "start"]
