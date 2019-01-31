@@ -3,7 +3,14 @@ const request = require('request')
 const baseURL = 'https://' + process.env.RAZORPAY_KEY_ID + ':' + process.env.RAZORPAY_KEY_SECRET + '@api.razorpay.com/v1/'
 
 exports.get = function (req, res) {
-  request.get(baseURL + 'invoices', {
+  console.log(req.query)
+
+  let url = baseURL + 'invoices'
+  if (req.query['customer_id']) {
+    url += '?customer_id=' + req.query['customer_id']
+  }
+
+  request.get(url, {
     json: true
   }, (err, response, body) => {
     if (err) {
