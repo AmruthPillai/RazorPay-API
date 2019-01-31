@@ -6,7 +6,7 @@ WORKDIR /usr/app
 
 # Install the dependencies
 COPY ./package.json ./
-RUN npm install --only=prod
+RUN npm install --loglevel=error
 
 # Copy local files to remote image
 COPY ./ ./
