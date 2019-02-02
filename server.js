@@ -13,6 +13,11 @@ app.use(bodyParser.json())
 
 const port = process.env.PORT || 8080
 
+// Health Check API
+app.get('/', (req, res) => {
+  res.status(200).send('Server is up and running!')
+})
+
 app.use('/payment-service', routes)
 app.listen(port)
 

@@ -4,7 +4,7 @@ const router = express.Router()
 
 // Health Check API
 router.get('/', (req, res) => {
-  res.status(200).send('Razorpay Service is up and running!')
+  res.status(200).send('Razorpay Payment Service is up and running!')
 })
 
 // Invoices API
