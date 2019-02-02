@@ -2,6 +2,11 @@ const express = require('express')
 
 const router = express.Router()
 
+// Health Check API
+router.get('/', (req, res) => {
+  res.status(200).send('Razorpay Service is up and running!')
+})
+
 // Invoices API
 const invoices = require('./controllers/invoices')
 router.get('/invoices', invoices.get)
