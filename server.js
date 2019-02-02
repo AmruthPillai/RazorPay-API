@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 const port = process.env.PORT || 8080
 
-app.use('/v1', routes)
+app.use('/payment-service', routes)
 app.listen(port)
 
 console.log(`The server is up and running on http://localhost:${port}!`)
